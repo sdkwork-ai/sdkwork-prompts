@@ -18,26 +18,32 @@
 
 BEGIN;
 
+ALTER TABLE ai_prompt_category ADD COLUMN IF NOT EXISTS organization_id BIGINT NOT NULL DEFAULT 0;
 UPDATE ai_prompt_category SET organization_id = 0 WHERE organization_id IS NULL;
 ALTER TABLE ai_prompt_category ALTER COLUMN organization_id SET DEFAULT 0;
 ALTER TABLE ai_prompt_category ALTER COLUMN organization_id SET NOT NULL;
 
+ALTER TABLE ai_prompt ADD COLUMN IF NOT EXISTS organization_id BIGINT NOT NULL DEFAULT 0;
 UPDATE ai_prompt SET organization_id = 0 WHERE organization_id IS NULL;
 ALTER TABLE ai_prompt ALTER COLUMN organization_id SET DEFAULT 0;
 ALTER TABLE ai_prompt ALTER COLUMN organization_id SET NOT NULL;
 
+ALTER TABLE ai_prompt_version ADD COLUMN IF NOT EXISTS organization_id BIGINT NOT NULL DEFAULT 0;
 UPDATE ai_prompt_version SET organization_id = 0 WHERE organization_id IS NULL;
 ALTER TABLE ai_prompt_version ALTER COLUMN organization_id SET DEFAULT 0;
 ALTER TABLE ai_prompt_version ALTER COLUMN organization_id SET NOT NULL;
 
+ALTER TABLE ai_prompt_binding ADD COLUMN IF NOT EXISTS organization_id BIGINT NOT NULL DEFAULT 0;
 UPDATE ai_prompt_binding SET organization_id = 0 WHERE organization_id IS NULL;
 ALTER TABLE ai_prompt_binding ALTER COLUMN organization_id SET DEFAULT 0;
 ALTER TABLE ai_prompt_binding ALTER COLUMN organization_id SET NOT NULL;
 
+ALTER TABLE ai_prompt_template ADD COLUMN IF NOT EXISTS organization_id BIGINT NOT NULL DEFAULT 0;
 UPDATE ai_prompt_template SET organization_id = 0 WHERE organization_id IS NULL;
 ALTER TABLE ai_prompt_template ALTER COLUMN organization_id SET DEFAULT 0;
 ALTER TABLE ai_prompt_template ALTER COLUMN organization_id SET NOT NULL;
 
+ALTER TABLE ai_prompt_usage ADD COLUMN IF NOT EXISTS organization_id BIGINT NOT NULL DEFAULT 0;
 UPDATE ai_prompt_usage SET organization_id = 0 WHERE organization_id IS NULL;
 ALTER TABLE ai_prompt_usage ALTER COLUMN organization_id SET DEFAULT 0;
 ALTER TABLE ai_prompt_usage ALTER COLUMN organization_id SET NOT NULL;
