@@ -21,6 +21,17 @@ export {
   readUnwrappedResourceItem,
 } from "./api-result";
 
+export type {
+  AdminPromptBindingCreateRequest,
+  AdminPromptBindingItem,
+  AdminPromptBindingUpdateRequest,
+  AdminPromptCreateRequest,
+  AdminPromptItem,
+  AdminPromptRenderRequest,
+  AdminPromptVersionCreateRequest,
+  AdminPromptVersionItem,
+} from "@sdkwork/prompts-backend-sdk";
+
 export interface PromptsDefinitionsListParams {
   page?: number | string;
   pageSize?: number | string;

@@ -1,14 +1,12 @@
-import type {
-  AdminPromptBindingCreateRequest,
-  AdminPromptBindingItem,
-  AdminPromptBindingUpdateRequest,
-  AdminPromptCreateRequest,
-  AdminPromptItem,
-  AdminPromptRenderRequest,
-  AdminPromptVersionCreateRequest,
-  AdminPromptVersionItem,
-} from "@sdkwork/prompts-backend-sdk";
 import {
+  type AdminPromptBindingCreateRequest,
+  type AdminPromptBindingItem,
+  type AdminPromptBindingUpdateRequest,
+  type AdminPromptCreateRequest,
+  type AdminPromptItem,
+  type AdminPromptRenderRequest,
+  type AdminPromptVersionCreateRequest,
+  type AdminPromptVersionItem,
   createIdempotencyParams,
   getPromptsBackendSdkClient,
   readUnwrappedApiData,

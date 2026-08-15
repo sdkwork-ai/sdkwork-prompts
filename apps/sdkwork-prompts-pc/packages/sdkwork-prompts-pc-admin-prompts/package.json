@@ -11,7 +11,6 @@
     }
   },
   "dependencies": {
-    "@sdkwork/prompts-backend-sdk": "workspace:*",
     "@sdkwork/prompts-pc-commons": "workspace:*"
   }
 }

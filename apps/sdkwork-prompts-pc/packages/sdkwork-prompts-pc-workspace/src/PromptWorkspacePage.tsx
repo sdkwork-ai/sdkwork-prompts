@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { isBlank } from "@sdkwork/utils/string";
-import type { AdminPromptItem } from "@sdkwork/prompts-backend-sdk";
+import type { AdminPromptItem } from "@sdkwork/prompts-pc-commons/runtime";
 import { listPrompts } from "@sdkwork/prompts-pc-admin-prompts";
 
 export function PromptWorkspacePage() {
