@@ -22,6 +22,13 @@
     "runtimeEntrypoints": [
       "compose_prompts_api_routes"
     ],
+    "requiredPorts": [
+      {
+        "name": "applicationApiAssembly",
+        "export": "sdkwork_api_prompts_assembly::assemble_api_router",
+        "provider": "sdkwork-api-prompts-assembly"
+      }
+    ],
     "sdkDependencies": [],
     "dependencyApiExports": [],
     "layerRole": "runtime-gateway"
