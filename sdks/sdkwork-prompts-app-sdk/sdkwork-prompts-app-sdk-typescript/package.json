@@ -1,6 +1,6 @@
 {
   "name": "@sdkwork/prompts-app-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SDKWork sdkwork-prompts-app-sdk composed consumer facade.",
   "type": "module",
   "private": false,
@@ -15,8 +15,7 @@
     }
   },
   "dependencies": {
-    "@sdkwork/sdk-common": "workspace:*",
-    "sdkwork-prompts-app-sdk-generated-typescript": "workspace:*"
+    "@sdkwork/sdk-common": "^1.0.5"
   },
   "publishConfig": {
     "access": "public",

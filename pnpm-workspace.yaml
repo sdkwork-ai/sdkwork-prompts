@@ -3,7 +3,6 @@ packages:
   - "apps/sdkwork-prompts-pc/packages/*"
   - "sdks/*"
   - "sdks/sdkwork-prompts-app-sdk/sdkwork-prompts-app-sdk-typescript"
-  - "sdks/sdkwork-prompts-app-sdk/generated/server-openapi"
   - "../sdkwork-sdk-commons/sdkwork-sdk-common-typescript"
   - "../sdkwork-utils/packages/sdkwork-utils-typescript"
   - "../sdkwork-app-topology"
