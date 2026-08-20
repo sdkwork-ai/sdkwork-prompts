@@ -1,8 +1,8 @@
 import type { PromptTemplate } from './prompt-template';
 
-export interface PromptsTemplatesGetResponse {
+export interface PromptsTemplatesUpdateResponse {
   code: 0;
-  data: unknown & Record<string, unknown>;
+  data: unknown & { item: PromptTemplate; };
   /** Server-owned request correlation id. */
   traceId: string;
 }

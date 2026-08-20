@@ -4,10 +4,9 @@ import { join } from "node:path";
 const root = process.cwd();
 const sdkgen = join(root, "../sdkwork-sdk-generator/bin/sdkgen.js");
 
-const targets = [
+const families = [
   {
     input: "sdks/sdkwork-prompts-app-sdk/openapi/sdkwork-prompts-app-api.openapi.yaml",
-    output: "sdks/sdkwork-prompts-app-sdk/generated/server-openapi",
     name: "sdkwork-prompts-app-sdk",
     type: "app",
     packageName: "@sdkwork/prompts-app-sdk",
@@ -16,7 +15,6 @@ const targets = [
   },
   {
     input: "sdks/sdkwork-prompts-backend-sdk/openapi/sdkwork-prompts-backend-api.openapi.yaml",
-    output: "sdks/sdkwork-prompts-backend-sdk/generated/server-openapi",
     name: "sdkwork-prompts-backend-sdk",
     type: "backend",
     packageName: "@sdkwork/prompts-backend-sdk",
@@ -25,7 +23,6 @@ const targets = [
   },
   {
     input: "sdks/sdkwork-prompts-sdk/openapi/sdkwork-prompts-open-api.openapi.yaml",
-    output: "sdks/sdkwork-prompts-sdk/generated/server-openapi",
     name: "sdkwork-prompts-sdk",
     type: "custom",
     packageName: "@sdkwork/prompts-sdk",
@@ -34,36 +31,44 @@ const targets = [
   },
 ];
 
-for (const target of targets) {
-  const args = [
-    sdkgen,
-    "generate",
-    "-i",
-    join(root, target.input),
-    "-o",
-    join(root, target.output),
-    "-n",
-    target.name,
-    "-t",
-    target.type,
-    "-l",
-    "typescript",
-    "--package-name",
-    target.packageName,
-    "--api-prefix",
-    target.apiPrefix,
-    "--standard-profile",
-    "sdkwork-v3",
-    "--client-name",
-    target.clientName,
-    "--sdk-version",
-    "0.1.0",
-    "--no-sync-published-version",
-  ];
-  console.log(`sdkgen ${target.name}`);
-  const result = spawnSync(process.execPath, args, { stdio: "inherit", cwd: root });
-  if (result.status !== 0) {
-    process.exit(result.status ?? 1);
+const languages = ["typescript", "rust"];
+
+for (const family of families) {
+  for (const lang of languages) {
+    const outputDir =
+      lang === "typescript"
+        ? `sdks/${family.name}/generated/server-openapi`
+        : `sdks/${family.name}/${family.name}-${lang}/generated/server-openapi`;
+    const args = [
+      sdkgen,
+      "generate",
+      "-i",
+      join(root, family.input),
+      "-o",
+      join(root, outputDir),
+      "-n",
+      family.name,
+      "-t",
+      family.type,
+      "-l",
+      lang,
+      "--package-name",
+      family.packageName,
+      "--api-prefix",
+      family.apiPrefix,
+      "--standard-profile",
+      "sdkwork-v3",
+      "--client-name",
+      family.clientName,
+      "--sdk-version",
+      "0.1.0",
+      "--no-sync-published-version",
+    ];
+    console.log(`sdkgen ${family.name} [${lang}]`);
+    const result = spawnSync(process.execPath, args, { stdio: "inherit", cwd: root });
+    if (result.status !== 0) {
+      process.exit(result.status ?? 1);
+    }
   }
 }
 

@@ -1,10 +1,12 @@
 {
   "schemaVersion": 1,
   "name": "sdkwork-prompts-sdk",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "language": "typescript",
   "sdkType": "custom",
   "packageName": "sdkwork-prompts-sdk-generated-typescript",
+  "transportPackageName": "sdkwork-prompts-sdk-generated-typescript",
+  "consumerPackageName": "@sdkwork/prompts-sdk",
   "generator": "@sdkwork/sdk-generator",
   "capabilities": {
     "supportsGeneratedTests": true,
@@ -26,7 +28,5 @@
     "stateRoots": [
       ".sdkwork/"
     ]
-  },
-  "transportPackageName": "sdkwork-prompts-sdk-generated-typescript",
-  "consumerPackageName": "@sdkwork/prompts-sdk"
+  }
 }

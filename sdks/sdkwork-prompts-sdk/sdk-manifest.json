@@ -50,7 +50,7 @@
     {
       "language": "rust",
       "workspace": "sdkwork-prompts-sdk-rust",
-      "generationState": "declared",
+      "generationState": "materialized",
       "releaseState": "not_published",
       "packagePath": "generated/server-openapi",
       "manifestPath": "generated/server-openapi/Cargo.toml",

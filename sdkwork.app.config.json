@@ -10,6 +10,7 @@
     "description": "Prompts domain foundation for SDKWork intelligence capabilities."
   },
   "backend": {
+    "appId": "sdkwork-prompts",
     "domain": "intelligence",
     "capabilities": [
       "prompts"

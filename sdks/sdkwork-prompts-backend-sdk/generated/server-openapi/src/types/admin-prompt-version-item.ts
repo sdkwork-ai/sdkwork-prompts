@@ -16,7 +16,7 @@ export interface AdminPromptVersionItem {
   safetyPolicy?: Record<string, unknown>;
   examplesJson?: Record<string, unknown>[];
   createdBy?: string;
-  publishedAt?: string;
+  publishedAt?: string | null;
   reviewComment?: string | null;
   createdAt: string;
   updatedAt: string;

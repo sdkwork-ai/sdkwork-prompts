@@ -28,7 +28,7 @@ client.setAccessToken('your-access-token');
 
 // Use the SDK
 const params = {
-  limit: 1,
+  page_size: 1,
 };
 const result = await client.prompts.agentTemplates.list(params);
 ```
@@ -66,7 +66,7 @@ const client = new SdkworkPromptsAppClient({
 ```typescript
 // List agent prompt templates.
 const params = {
-  limit: 1,
+  page_size: 1,
 };
 const result = await client.prompts.agentTemplates.list(params);
 ```
@@ -78,7 +78,7 @@ import { SdkworkPromptsAppClient, NetworkError, TimeoutError, AuthenticationErro
 
 try {
   const params = {
-    limit: 1,
+    page_size: 1,
   };
   const result = await client.prompts.agentTemplates.list(params);
 } catch (error) {
@@ -100,6 +100,8 @@ This SDK includes cross-platform publish scripts in `bin/`:
 - `bin/publish-core.mjs`
 - `bin/publish.sh`
 - `bin/publish.ps1`
+
+TypeScript check and publish commands use pnpm to materialize workspace dependency versions in a temporary tarball. They reject local-only dependency protocols before npm publication and do not rewrite the source `package.json`.
 
 ### Check
 

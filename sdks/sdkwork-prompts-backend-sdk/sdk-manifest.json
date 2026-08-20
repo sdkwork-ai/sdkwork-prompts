@@ -101,13 +101,13 @@
     {
       "language": "rust",
       "workspace": "sdkwork-prompts-backend-sdk-rust",
-      "generationState": "declared",
+      "generationState": "materialized",
       "releaseState": "not_published",
-      "packagePath": "sdkwork-prompts-backend-sdk-typescript/generated/server-openapi",
-      "manifestPath": "sdkwork-prompts-backend-sdk-typescript/generated/server-openapi/Cargo.toml",
+      "packagePath": "sdkwork-prompts-backend-sdk-rust/generated/server-openapi",
+      "manifestPath": "sdkwork-prompts-backend-sdk-rust/generated/server-openapi/Cargo.toml",
       "name": "sdkwork-prompts-backend-sdk",
       "version": "0.1.0",
-      "generatedPath": "sdkwork-prompts-backend-sdk-typescript/generated/server-openapi"
+      "generatedPath": "sdkwork-prompts-backend-sdk-rust/generated/server-openapi"
     }
   ],
   "schemaVersion": 1

@@ -1,5 +1,5 @@
 import { backendApiPath } from './paths';
-import type { HttpClient } from '../http/client';
+import type { ApiRequestOptions, HttpClient } from '../http/client';
 
 import type { AdminPromptBindingCreateRequest, AdminPromptBindingItem, AdminPromptBindingUpdateRequest, AdminPromptCreateRequest, AdminPromptItem, AdminPromptRenderRequest, AdminPromptVersionCreateRequest, AdminPromptVersionItem, SdkWorkPageData } from '../types';
 
@@ -12,16 +12,16 @@ export class PromptsAdminPromptsAdminBindingsApi {
   }
 
 
-async list(promptId: string): Promise<SdkWorkPageData> {
-    return this.client.get<SdkWorkPageData>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/bindings`));
+async list(promptId: string, requestOptions?: ApiRequestOptions): Promise<SdkWorkPageData> {
+    return this.client.request<SdkWorkPageData>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/bindings`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'page' });
   }
 
-async create(promptId: string, body: AdminPromptBindingCreateRequest): Promise<AdminPromptBindingItem> {
-    return this.client.post<AdminPromptBindingItem>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/bindings`), body, undefined, undefined, 'application/json');
+async create(promptId: string, body: AdminPromptBindingCreateRequest, requestOptions?: ApiRequestOptions): Promise<AdminPromptBindingItem> {
+    return this.client.request<AdminPromptBindingItem>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/bindings`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'POST' as any, body, contentType: 'application/json', sdkworkUnwrapKind: 'item' });
   }
 
-async update(bindingId: string, body: AdminPromptBindingUpdateRequest): Promise<AdminPromptBindingItem> {
-    return this.client.put<AdminPromptBindingItem>(backendApiPath(`/prompts/bindings/${serializePathParameter(bindingId, { name: 'bindingId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
+async update(bindingId: string, body: AdminPromptBindingUpdateRequest, requestOptions?: ApiRequestOptions): Promise<AdminPromptBindingItem> {
+    return this.client.request<AdminPromptBindingItem>(backendApiPath(`/prompts/bindings/${serializePathParameter(bindingId, { name: 'bindingId', style: 'simple', explode: false })}`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'PUT' as any, body, contentType: 'application/json', sdkworkUnwrapKind: 'item' });
   }
 }
 
@@ -33,20 +33,20 @@ export class PromptsAdminPromptsAdminVersionsApi {
   }
 
 
-async list(promptId: string): Promise<SdkWorkPageData> {
-    return this.client.get<SdkWorkPageData>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/versions`));
+async list(promptId: string, requestOptions?: ApiRequestOptions): Promise<SdkWorkPageData> {
+    return this.client.request<SdkWorkPageData>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/versions`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'page' });
   }
 
-async create(promptId: string, body: AdminPromptVersionCreateRequest): Promise<AdminPromptVersionItem> {
-    return this.client.post<AdminPromptVersionItem>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/versions`), body, undefined, undefined, 'application/json');
+async create(promptId: string, body: AdminPromptVersionCreateRequest, requestOptions?: ApiRequestOptions): Promise<AdminPromptVersionItem> {
+    return this.client.request<AdminPromptVersionItem>(backendApiPath(`/prompts/${serializePathParameter(promptId, { name: 'promptId', style: 'simple', explode: false })}/versions`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'POST' as any, body, contentType: 'application/json', sdkworkUnwrapKind: 'item' });
   }
 
-async publish(versionId: string): Promise<AdminPromptVersionItem> {
-    return this.client.post<AdminPromptVersionItem>(backendApiPath(`/prompts/versions/${serializePathParameter(versionId, { name: 'versionId', style: 'simple', explode: false })}/publish`));
+async publish(versionId: string, requestOptions?: ApiRequestOptions): Promise<AdminPromptVersionItem> {
+    return this.client.request<AdminPromptVersionItem>(backendApiPath(`/prompts/versions/${serializePathParameter(versionId, { name: 'versionId', style: 'simple', explode: false })}/publish`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'POST' as any, sdkworkUnwrapKind: 'item' });
   }
 
-async render(versionId: string, body?: AdminPromptRenderRequest): Promise<Record<string, unknown>> {
-    return this.client.post<Record<string, unknown>>(backendApiPath(`/prompts/versions/${serializePathParameter(versionId, { name: 'versionId', style: 'simple', explode: false })}/render`), body, undefined, undefined, 'application/json');
+async render(versionId: string, body?: AdminPromptRenderRequest, requestOptions?: ApiRequestOptions): Promise<{ rendered: string; }> {
+    return this.client.request<{ rendered: string; }>(backendApiPath(`/prompts/versions/${serializePathParameter(versionId, { name: 'versionId', style: 'simple', explode: false })}/render`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'POST' as any, ...(body !== undefined ? { body, contentType: 'application/json' } : {}), sdkworkUnwrapKind: 'data' });
   }
 }
 
@@ -68,7 +68,7 @@ export class PromptsAdminPromptsAdminDefinitionsApi {
   }
 
 
-async list(params?: PromptsAdminPromptsAdminDefinitionsListParams): Promise<SdkWorkPageData> {
+async list(params?: PromptsAdminPromptsAdminDefinitionsListParams, requestOptions?: ApiRequestOptions): Promise<SdkWorkPageData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
@@ -78,22 +78,20 @@ async list(params?: PromptsAdminPromptsAdminDefinitionsListParams): Promise<SdkW
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
       { name: 'category_id', value: params?.categoryId, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<SdkWorkPageData>(appendQueryString(backendApiPath(`/prompts`), query));
+    return this.client.request<SdkWorkPageData>(appendQueryString(backendApiPath(`/prompts`), query), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'page' });
   }
 
-async create(body: AdminPromptCreateRequest): Promise<AdminPromptItem> {
-    return this.client.post<AdminPromptItem>(backendApiPath(`/prompts`), body, undefined, undefined, 'application/json');
+async create(body: AdminPromptCreateRequest, requestOptions?: ApiRequestOptions): Promise<AdminPromptItem> {
+    return this.client.request<AdminPromptItem>(backendApiPath(`/prompts`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'POST' as any, body, contentType: 'application/json', sdkworkUnwrapKind: 'item' });
   }
 }
 
 export class PromptsAdminPromptsAdminApi {
-  private client: HttpClient;
   public readonly definitions: PromptsAdminPromptsAdminDefinitionsApi;
   public readonly versions: PromptsAdminPromptsAdminVersionsApi;
   public readonly bindings: PromptsAdminPromptsAdminBindingsApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.definitions = new PromptsAdminPromptsAdminDefinitionsApi(client);
     this.versions = new PromptsAdminPromptsAdminVersionsApi(client);
     this.bindings = new PromptsAdminPromptsAdminBindingsApi(client);
@@ -102,22 +100,18 @@ export class PromptsAdminPromptsAdminApi {
 }
 
 export class PromptsAdminPromptsApi {
-  private client: HttpClient;
   public readonly admin: PromptsAdminPromptsAdminApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.admin = new PromptsAdminPromptsAdminApi(client);
   }
 
 }
 
 export class PromptsAdminApi {
-  private client: HttpClient;
   public readonly prompts: PromptsAdminPromptsApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.prompts = new PromptsAdminPromptsApi(client);
   }
 

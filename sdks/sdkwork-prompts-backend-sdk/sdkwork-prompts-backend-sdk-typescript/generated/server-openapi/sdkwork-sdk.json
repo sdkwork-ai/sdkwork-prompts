@@ -1,10 +1,12 @@
 {
   "schemaVersion": 1,
   "name": "sdkwork-prompts-backend-sdk",
-  "version": "0.1.4",
+  "version": "0.1.0",
   "language": "typescript",
   "sdkType": "backend",
   "packageName": "sdkwork-prompts-backend-sdk-generated-typescript",
+  "transportPackageName": "sdkwork-prompts-backend-sdk-generated-typescript",
+  "consumerPackageName": "@sdkwork/prompts-backend-sdk",
   "generator": "@sdkwork/sdk-generator",
   "capabilities": {
     "supportsGeneratedTests": true,
@@ -26,7 +28,5 @@
     "stateRoots": [
       ".sdkwork/"
     ]
-  },
-  "transportPackageName": "sdkwork-prompts-backend-sdk-generated-typescript",
-  "consumerPackageName": "@sdkwork/prompts-backend-sdk"
+  }
 }

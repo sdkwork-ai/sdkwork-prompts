@@ -3,10 +3,11 @@ packages:
   - "apps/sdkwork-prompts-pc/packages/*"
   - "sdks/*"
   - "sdks/sdkwork-prompts-app-sdk/sdkwork-prompts-app-sdk-typescript"
+  - "sdks/sdkwork-prompts-backend-sdk/sdkwork-prompts-backend-sdk-typescript"
+  - "sdks/sdkwork-prompts-sdk/sdkwork-prompts-sdk-typescript"
   - "../sdkwork-sdk-commons/sdkwork-sdk-common-typescript"
   - "../sdkwork-utils/packages/sdkwork-utils-typescript"
   - "../sdkwork-app-topology"
-  - "sdks/sdkwork-prompts-backend-sdk/sdkwork-prompts-backend-sdk-typescript"
 
 
 catalog:
