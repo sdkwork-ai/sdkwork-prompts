@@ -28,7 +28,7 @@ pnpm topology:validate
 pnpm gateway:validate:cloud
 ```
 
-Profiles: `specs/topology.spec.json` — standalone development and cloud split-services production.
+Profiles: `specs/topology.spec.json` — `standalone.development` and `cloud.production` (full vocabulary: development|test|staging|production × standalone|cloud).
 
 ## Production environment
 
