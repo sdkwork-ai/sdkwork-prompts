@@ -8,7 +8,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "build:dev": "node ../../../sdkwork-specs/tools/build-browser-client.mjs --app-root . --environment dev",
+    "build:test": "node ../../../sdkwork-specs/tools/build-browser-client.mjs --app-root . --environment test",
+    "build:staging": "node ../../../sdkwork-specs/tools/build-browser-client.mjs --app-root . --environment staging",
+    "build:prod": "node ../../../sdkwork-specs/tools/build-browser-client.mjs --app-root . --environment prod"
   },
   "dependencies": {
     "@sdkwork/prompts-pc-workspace": "workspace:*",
