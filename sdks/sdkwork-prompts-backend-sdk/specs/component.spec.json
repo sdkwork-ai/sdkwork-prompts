@@ -62,7 +62,7 @@
         }
       },
       {
-        "workspace": "../sdkwork-drive/sdks/sdkwork-drive-backend-sdk",
+        "workspace": "sdkwork-drive-backend-sdk",
         "role": "drive-backend-capability",
         "required": true,
         "dependencyMode": "consumer-sdk",

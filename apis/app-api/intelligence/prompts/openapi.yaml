@@ -19,7 +19,7 @@ paths:
       tags:
       - prompts
       summary: List prompt templates.
-      operationId: prompts.templates.list
+      operationId: templates.list
       security:
       - AuthToken: []
         AccessToken: []
@@ -83,7 +83,7 @@ paths:
       tags:
       - prompts
       summary: Create prompt template.
-      operationId: prompts.templates.create
+      operationId: templates.create
       security:
       - AuthToken: []
         AccessToken: []
@@ -123,12 +123,13 @@ paths:
                           $ref: '#/components/schemas/PromptTemplate'
         default:
           $ref: '#/components/responses/Problem'
+      parameters: []
   /app/v3/api/prompts/templates/{templateId}:
     get:
       tags:
       - prompts
       summary: Get prompt template.
-      operationId: prompts.templates.retrieve
+      operationId: templates.retrieve
       security:
       - AuthToken: []
         AccessToken: []
@@ -168,7 +169,7 @@ paths:
       tags:
       - prompts
       summary: Update prompt template metadata.
-      operationId: prompts.templates.update
+      operationId: templates.update
       security:
       - AuthToken: []
         AccessToken: []
@@ -215,7 +216,7 @@ paths:
       tags:
       - prompts
       summary: List template versions.
-      operationId: prompts.templateVersions.list
+      operationId: templateVersions.list
       security:
       - AuthToken: []
         AccessToken: []
@@ -261,7 +262,7 @@ paths:
       tags:
       - prompts
       summary: Create template version.
-      operationId: prompts.templateVersions.create
+      operationId: templateVersions.create
       security:
       - AuthToken: []
         AccessToken: []
@@ -308,7 +309,7 @@ paths:
       tags:
       - prompts
       summary: List agent prompt templates.
-      operationId: prompts.agentTemplates.list
+      operationId: agentTemplates.list
       security:
       - AuthToken: []
         AccessToken: []
@@ -361,7 +362,7 @@ paths:
       tags:
       - prompts
       summary: Get agent prompt template.
-      operationId: prompts.agentTemplates.retrieve
+      operationId: agentTemplates.retrieve
       security:
       - AuthToken: []
         AccessToken: []

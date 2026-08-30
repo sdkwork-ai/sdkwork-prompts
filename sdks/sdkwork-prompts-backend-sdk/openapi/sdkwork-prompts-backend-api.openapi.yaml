@@ -109,6 +109,7 @@ paths:
                           $ref: '#/components/schemas/AdminPromptItem'
         default:
           $ref: '#/components/responses/Problem'
+      parameters: []
   /backend/v3/api/prompts/{promptId}/versions:
     get:
       tags:
@@ -654,8 +655,9 @@ components:
         ownerType:
           type: string
         ownerId:
-          type: integer
+          type: string
           format: int64
+          x-sdkwork-int64-string: true
         bindingRole:
           type: string
         priority:
@@ -671,8 +673,9 @@ components:
         ownerType:
           type: string
         ownerId:
-          type: integer
+          type: string
           format: int64
+          x-sdkwork-int64-string: true
         bindingRole:
           type: string
         priority:

@@ -32,7 +32,7 @@
     }
   ],
   "contracts": {
-    "layerRole": "http-adapter",
+    "layerRole": "backend-provider",
     "publicExports": ["."],
     "providedPorts": ["PromptsRequestContext", "AppState"],
     "requiredPorts": ["PromptAiRepository"],

@@ -149,7 +149,7 @@
         }
       },
       {
-        "workspace": "../sdkwork-drive/sdks/sdkwork-drive-app-sdk",
+        "workspace": "sdkwork-drive-app-sdk",
         "role": "drive-app-capability",
         "required": false,
         "dependencyMode": "consumer-sdk",
@@ -162,7 +162,7 @@
         }
       },
       {
-        "workspace": "../sdkwork-drive/sdks/sdkwork-drive-backend-sdk",
+        "workspace": "sdkwork-drive-backend-sdk",
         "role": "drive-backend-capability",
         "required": false,
         "dependencyMode": "consumer-sdk",
