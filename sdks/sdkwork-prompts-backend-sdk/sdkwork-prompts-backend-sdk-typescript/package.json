@@ -1,6 +1,6 @@
 {
   "name": "@sdkwork/prompts-backend-sdk",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "sdkworkRole": "composed-facade",
   "description": "SDKWork Prompts backend API SDK",
   "author": "SDKWork Team",
