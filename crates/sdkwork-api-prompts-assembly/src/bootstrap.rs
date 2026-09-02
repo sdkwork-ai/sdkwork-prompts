@@ -7,7 +7,7 @@ use sdkwork_database_sqlx::DatabasePool;
 use sdkwork_prompts_service_host::PromptsServiceHost;
 use sdkwork_prompts_web_context::{AppState, PromptsRequestContext, ResolvedPromptsContext};
 pub use sdkwork_web_bootstrap::ApiAssemblyContribution;
-use sdkwork_web_bootstrap::{ReadinessCheck, ReadinessFuture};
+use sdkwork_web_bootstrap::{ReadinessCheck, ReadinessFuture, WebModule};
 use sdkwork_web_core::{DomainContextInjector, HttpRouteManifest, WebRequestContext};
 
 pub type ApiAssembly = ApiAssemblyContribution;
@@ -135,4 +135,17 @@ fn assemble_app_api_contribution_with_host(
         vec![Arc::new(PromptsContextInjector)],
         readiness_check,
     )
+}
+
+/// Canonical Web Module definition for this application
+/// (API_ASSEMBLY_SPEC §4.1.1): the complete HTTP surface — every route,
+/// manifest, and OpenAPI document of this owner — as one installable module.
+pub async fn web_module() -> Result<WebModule, String> {
+    Ok(WebModule::from_contribution(assemble_api_router().await?))
+}
+
+/// Same as [`web_module`] but composed on a process-shared database pool
+/// (platform gateways, API_ASSEMBLY_SPEC §4.1.1).
+pub async fn web_module_with_pool(pool: DatabasePool) -> Result<WebModule, String> {
+    Ok(WebModule::from_contribution(assemble_api_router_with_pool(pool).await?))
 }

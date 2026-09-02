@@ -1,6 +1,6 @@
 use sdkwork_api_prompts_assembly::assemble_api_router;
 use sdkwork_utils_rust::optional::default_if_blank;
-use sdkwork_web_bootstrap::ComposedApiAssembly;
+use sdkwork_web_bootstrap::ApiModuleRegistry;
 
 #[tokio::main]
 async fn main() {
@@ -13,7 +13,10 @@ async fn main() {
     let resolver = sdkwork_iam_web_adapter::iam_web_request_context_resolver_from_env().await;
     let framework =
         sdkwork_iam_web_adapter::build_web_framework_builder(resolver, manifest, Vec::new());
-    let app = ComposedApiAssembly::try_compose("SDKWork Prompts API", vec![assembly])
+    let mut module_registry = ApiModuleRegistry::new();
+    module_registry.add_modules(vec![assembly]);
+    let app = module_registry
+        .try_compose("SDKWork Prompts API")
         .expect("compose prompts API contribution")
         .into_hosted(framework)
         .router;

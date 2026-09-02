@@ -1740,6 +1740,7 @@ dependencies = [
  "sdkwork-routes-prompts-open-api",
  "sdkwork-web-bootstrap",
  "sdkwork-web-core",
+ "tokio",
 ]
 
 [[package]]
@@ -1793,7 +1794,6 @@ dependencies = [
  "serde_json",
  "sqlx",
  "thiserror 2.0.18",
- "tokio",
 ]
 
 [[package]]
@@ -1834,7 +1834,6 @@ dependencies = [
  "serde_json",
  "sqlx",
  "thiserror 2.0.18",
- "tokio",
  "tracing",
 ]
 
