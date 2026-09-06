@@ -29,7 +29,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt
-      x-sdkwork-permission: prompts.templates.read
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       parameters:
@@ -93,7 +92,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt
-      x-sdkwork-permission: prompts.templates.create
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       requestBody:
@@ -139,7 +137,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt
-      x-sdkwork-permission: prompts.templates.read
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       parameters:
@@ -179,7 +176,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt
-      x-sdkwork-permission: prompts.templates.update
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       parameters:
@@ -226,7 +222,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt_version
-      x-sdkwork-permission: prompts.templateVersions.read
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       parameters:
@@ -272,7 +267,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt_version
-      x-sdkwork-permission: prompts.templateVersions.create
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       parameters:
@@ -319,7 +313,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt_template
-      x-sdkwork-permission: prompts.agentTemplates.read
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       parameters:
@@ -372,7 +365,6 @@ paths:
       x-sdkwork-request-context: WebRequestContext
       x-sdkwork-domain: intelligence
       x-sdkwork-resource: ai_prompt_template
-      x-sdkwork-permission: prompts.agentTemplates.read
       x-sdkwork-tenant-scope: tenant
       x-sdkwork-auth-mode: dual-token
       parameters:
