@@ -1,0 +1,13 @@
+environment = "demo"
+
+[http]
+
+[[http.server]]
+listen = ["80"]
+serverName = ["prompts-demo.sdkwork.com", "prompts-demo.birdcoder.com", "prompts-demo.dtupay.com", "prompts-demo.noaper.com", "prompts-demo.sdkwork.cn", "prompts-demo.birdcoder.cn", "prompts-demo.dtupay.cn", "prompts-demo.noaper.cn", "prompts-demo.skubc.com", "prompts-demo.skubc.cn", "prompts-demo.zowalk.com", "prompts-demo.zowalk.cn", "prompts-demo.offer86.com", "prompts-demo.offer86.cn", "prompts-demo.86offer.com", "prompts-demo.86offer.cn"]
+include = ["snippets/adaptive-web.named-locations.conf", "snippets/gateway-api-locations.nonproduction.conf"]
+
+[[http.server.location]]
+match = "/"
+include = ["snippets/adaptive-web.dispatch.conf"]
+
