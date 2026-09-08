@@ -9,6 +9,7 @@ import type {
   SdkworkPromptsBackendClient,
 } from "@sdkwork/prompts-backend-sdk";
 import { createClient } from "@sdkwork/prompts-backend-sdk";
+import { resolveBaseUrl } from "@sdkwork/sdk-common";
 import { uuid } from "@sdkwork/utils/id";
 
 export {
@@ -91,7 +92,7 @@ export function resolvePromptsApiBaseUrl(): string {
   if (fromEnv && fromEnv.trim().length > 0) {
     return fromEnv.replace(/\/$/, "");
   }
-  return "http://localhost:8080";
+  return resolveBaseUrl().url;
 }
 
 function normalizeListParams(params?: PromptsDefinitionsListParams) {
