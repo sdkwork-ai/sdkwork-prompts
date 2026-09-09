@@ -9,7 +9,7 @@ import type {
   SdkworkPromptsBackendClient,
 } from "@sdkwork/prompts-backend-sdk";
 import { createClient } from "@sdkwork/prompts-backend-sdk";
-import { resolveBaseUrl } from "@sdkwork/sdk-common";
+import {resolveBaseUrlWithAlignProtocol} from "@sdkwork/sdk-common";
 import { uuid } from "@sdkwork/utils/id";
 
 export {
@@ -92,7 +92,7 @@ export function resolvePromptsApiBaseUrl(): string {
   if (fromEnv && fromEnv.trim().length > 0) {
     return fromEnv.replace(/\/$/, "");
   }
-  return resolveBaseUrl().url;
+  return resolveBaseUrlWithAlignProtocol().url;
 }
 
 function normalizeListParams(params?: PromptsDefinitionsListParams) {
