@@ -52,6 +52,8 @@ export function PromptWorkspacePage() {
       {loading ? <p>Loading prompts…</p> : null}
       {error ? (
         <p role="alert">
+          {/* base-url-check: exempt (diagnostic message text; resolution lives in
+              sdkwork-prompts-pc-commons runtime.ts via resolveBaseUrl, §6.3) */}
           Prompt list unavailable: {error}. Start <code>sdkwork-api-prompts-standalone-gateway</code> on port
           8080 or set <code>VITE_SDKWORK_PROMPTS_API_BASE_URL</code>.
         </p>

@@ -50,6 +50,18 @@ Thumbs.db
 .DS_Store
 Thumbs.db
 
+# Generated SDK compiled outputs (only .ts sources are tracked)
+sdks/**/generated/**/*.js
+sdks/**/generated/**/*.d.ts
+sdks/**/generated/**/*.js.map
+sdks/**/generated/**/*.d.ts.map
+
+# TypeScript/JavaScript build artifacts emitted alongside source (tsc declaration/emit)
+*.d.ts.map
+*.js.map
+**/src/**/*.js
+**/src/**/*.d.ts
+
 # Local artifacts and build output (do not commit)
 sdks/**/package-lock.json
 
