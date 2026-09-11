@@ -5,7 +5,7 @@ const root = process.cwd();
 const schema = readFileSync(join(root, "database/contract/schema.yaml"), "utf8");
 const aiSchema = readFileSync(join(root, "specs/prompts-ai-database.schema.yaml"), "utf8");
 const ddl = readFileSync(
-  join(root, "database/ddl/baseline/postgres/0001_prompts_ai_baseline.sql"),
+  join(root, "database/ddl/baseline/postgres/0001_prompts_baseline.sql"),
   "utf8"
 );
 

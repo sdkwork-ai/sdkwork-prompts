@@ -7,7 +7,7 @@ Updated: 2026-06-29
 ## Authoritative contract
 
 `specs/prompts-ai-database.schema.yaml`  
-Baseline DDL: `database/ddl/baseline/postgres/0001_prompts_ai_baseline.sql`
+Baseline DDL: `database/ddl/baseline/postgres/0001_prompts_baseline.sql`
 
 ## Design model
 

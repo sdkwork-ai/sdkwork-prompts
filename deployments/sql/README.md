@@ -6,7 +6,7 @@ Database lifecycle is owned by the canonical `database/` module.
 | --- | --- |
 | Schema contract | `database/contract/schema.yaml` |
 | Semantic registry | `specs/prompts-ai-database.schema.yaml` |
-| Baseline DDL | `database/ddl/baseline/postgres/0001_prompts_ai_baseline.sql` |
+| Baseline DDL | `database/ddl/baseline/postgres/0001_prompts_baseline.sql` |
 
 ```bash
 pnpm db:validate
