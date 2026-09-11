@@ -70,7 +70,6 @@ sdks/**/package-lock.json
 **/dist-stale-bak/
 
 # Build artifacts
-/bin/
 
 # --- SDKWork: generated TypeScript SDK build outputs (never committed) ---
 **/generated/server-openapi/src/**/*.js
