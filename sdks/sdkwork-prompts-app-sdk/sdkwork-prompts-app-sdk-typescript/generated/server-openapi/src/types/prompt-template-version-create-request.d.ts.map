@@ -1,0 +1,1 @@
+{"version":3,"file":"prompt-template-version-create-request.d.ts","sourceRoot":"","sources":["prompt-template-version-create-request.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,2BAA2B,EAAE,MAAM,kCAAkC,CAAC;AAEpF,MAAM,WAAW,kCAAkC;IACjD,aAAa,EAAE,MAAM,CAAC;IACtB,OAAO,EAAE,MAAM,CAAC;IAChB,UAAU,CAAC,EAAE,MAAM,CAAC;IACpB,SAAS,CAAC,EAAE,2BAA2B,EAAE,CAAC;CAC3C"}

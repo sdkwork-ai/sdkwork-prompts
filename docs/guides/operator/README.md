@@ -2,7 +2,17 @@
 
 ## Standalone deployment
 
-### Docker Compose
+### Docker（bin/ 入口，标准通道）
+
+标准容器通道是 `bin/` 九入口（`MODULE_BIN_SPEC.md`；四件套 runbook 见
+`docs/runbooks/`）。镜像构建/部署钩子接线完成后即可用：
+
+```bash
+bin/docker-image.sh build                                       # tag 取自 sdkwork.app.config.json
+bin/docker-deploy.sh install --environment staging --yes        # install/upgrade/rollback/status/logs
+```
+
+### Docker Compose（本地开发直跑）
 
 From `deployments/docker/` (build context is SDKWork workspace root):
 
@@ -10,7 +20,8 @@ From `deployments/docker/` (build context is SDKWork workspace root):
 docker compose up -d --build
 ```
 
-Services: `prompts-api` (8080), `postgres` (5432).
+Services: `prompts-api` (8080), `postgres` (5432). 仅作本地开发回退，
+不作为安装部署口径。
 
 ### Binary
 

@@ -1,0 +1,1 @@
+{"version":3,"file":"admin-prompt-create-request.d.ts","sourceRoot":"","sources":["admin-prompt-create-request.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,wBAAwB;IACvC,SAAS,EAAE,MAAM,CAAC;IAClB,IAAI,EAAE,MAAM,CAAC;IACb,WAAW,CAAC,EAAE,MAAM,CAAC;IACrB,UAAU,CAAC,EAAE,MAAM,CAAC;IACpB,UAAU,CAAC,EAAE,MAAM,CAAC;IACpB,UAAU,CAAC,EAAE,MAAM,CAAC;IACpB,IAAI,CAAC,EAAE,MAAM,EAAE,CAAC;CACjB"}
