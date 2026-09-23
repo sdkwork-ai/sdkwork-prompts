@@ -85,3 +85,9 @@ sdks/**/package-lock.json
 **/*-typescript/src/**/*.js.map
 **/*-typescript/src/**/*.d.ts
 **/*-typescript/src/**/*.d.ts.map
+
+# Compiler emit beside source is not content (REPOSITORY_BASELINE_SPEC.md section 2).
+# The negations keep authored ambient declarations committable.
+!**/src/**/vite-env.d.ts
+!**/src/**/global.d.ts
+!**/src/**/shims.d.ts

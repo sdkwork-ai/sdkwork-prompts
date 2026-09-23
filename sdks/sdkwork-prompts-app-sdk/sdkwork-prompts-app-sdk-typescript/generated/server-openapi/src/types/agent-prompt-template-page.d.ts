@@ -1,5 +1,0 @@
-import type { AgentPromptTemplate } from './agent-prompt-template';
-export interface AgentPromptTemplatePage {
-    items: AgentPromptTemplate[];
-}
-//# sourceMappingURL=agent-prompt-template-page.d.ts.map
