@@ -59,8 +59,6 @@ sdks/**/generated/**/*.d.ts.map
 # TypeScript/JavaScript build artifacts emitted alongside source (tsc declaration/emit)
 *.d.ts.map
 *.js.map
-**/src/**/*.js
-**/src/**/*.d.ts
 
 # Local artifacts and build output (do not commit)
 sdks/**/package-lock.json
@@ -76,9 +74,7 @@ sdks/**/package-lock.json
 **/generated/server-openapi/src/**/*.js.map
 **/generated/server-openapi/src/**/*.d.ts
 **/generated/server-openapi/src/**/*.d.ts.map
-**/composed/**/*.js
 **/composed/**/*.js.map
-**/composed/**/*.d.ts
 **/composed/**/*.d.ts.map
 
 **/*-typescript/src/**/*.js
@@ -86,8 +82,9 @@ sdks/**/package-lock.json
 **/*-typescript/src/**/*.d.ts
 **/*-typescript/src/**/*.d.ts.map
 
-# Compiler emit beside source is not content (REPOSITORY_BASELINE_SPEC.md section 2).
-# The negations keep authored ambient declarations committable.
-!**/src/**/vite-env.d.ts
-!**/src/**/global.d.ts
-!**/src/**/shims.d.ts
+# Compiler emit is ignored only where the file is emit BY DEFINITION. The broad
+# `**/src/**/*.js` / `**/src/**/*.d.ts` globs are gone: `.gitignore` cannot express "ignore
+# this only when a same-stem .ts sibling exists", so they also hid authored declarations
+# (`vite-env.d.ts`, `styles.d.ts`, module shims) and real mini-program source under `src/`.
+# The sibling rule is enforced against tracked files by
+# `sdkwork-specs/tools/check-repository-baseline-content.mjs` instead.
