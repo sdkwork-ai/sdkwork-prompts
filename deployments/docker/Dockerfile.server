@@ -25,7 +25,7 @@ WORKDIR /app
 
 COPY --from=builder /ws/sdkwork-prompts/target/release/sdkwork-prompts-standalone-gateway /app/sdkwork-prompts-standalone-gateway
 COPY sdkwork-prompts/database /app/database
-COPY sdkwork-prompts/sdkwork.app.config.json /app/sdkwork.app.config.json
+COPY sdkwork-prompts/agent.app.config.json /app/agent.app.config.json
 
 EXPOSE 8080
 

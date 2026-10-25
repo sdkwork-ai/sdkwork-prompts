@@ -6,7 +6,7 @@
     "name": "sdkwork-prompts",
     "repository": "sdkwork-ai/sdkwork-prompts",
     "sourcePath": ".",
-    "configPath": "sdkwork.app.config.json"
+    "configPath": "agent.app.config.json"
   },
   "release": {
     "artifactPrefix": "sdkwork-prompts",

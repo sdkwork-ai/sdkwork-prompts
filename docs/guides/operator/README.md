@@ -8,7 +8,7 @@
 `docs/runbooks/`）。镜像构建/部署钩子接线完成后即可用：
 
 ```bash
-bin/docker-image.sh build                                       # tag 取自 sdkwork.app.config.json
+bin/docker-image.sh build                                       # tag 取自 agent.app.config.json
 bin/docker-deploy.sh install --environment staging --yes        # install/upgrade/rollback/status/logs
 ```
 

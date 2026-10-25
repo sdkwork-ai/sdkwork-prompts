@@ -33,7 +33,7 @@ const scanRoots = [
   "apis",
   "deployments",
   "jobs",
-  "sdkwork.app.config.json",
+  "agent.app.config.json",
   "package.json",
   "Cargo.toml",
   "README.md",

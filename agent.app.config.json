@@ -1,15 +1,16 @@
 {
   "schemaVersion": 3,
-  "kind": "sdkwork.app",
+  "kind": "agent.app",
   "app": {
-    "key": "sdkwork-prompts-pc",
-    "name": "sdkwork-prompts-pc",
-    "displayName": "SDKWork Prompts PC",
-    "appType": "APP_HTML",
-    "description": "Prompts PC application for SDKWork intelligence capabilities.",
-    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-prompts-pc"
+    "key": "sdkwork-prompts",
+    "name": "sdkwork-prompts",
+    "displayName": "SDKWork Prompts",
+    "appType": "SDK",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-prompts",
+    "description": "Prompts domain foundation for SDKWork intelligence capabilities."
   },
   "backend": {
+    "appId": "sdkwork-prompts",
     "domain": "intelligence",
     "capabilities": [
       "prompts"
@@ -24,31 +25,44 @@
         "surface": "backend-api",
         "authority": "sdkwork-prompts-backend-api",
         "prefix": "/backend/v3/api"
+      },
+      {
+        "surface": "open-api",
+        "authority": "sdkwork-prompts-open-api",
+        "prefix": "/prompts/v3/api"
       }
+    ],
+    "accessTokenPermissionScope": [
+      "iam.users.read"
     ],
     "tenantId": "100001",
     "organizationId": "0"
   },
   "runtime": {
     "modes": [
-      "web",
-      "desktop",
-      "tablet-ipados",
-      "tablet-android"
+      "saas",
+      "private",
+      "local"
     ],
     "rootDirectories": [
-      "config",
-      "docs",
-      "packages",
-      "public",
-      "scripts",
+      "apis",
+      "apps",
+      "crates",
       "sdks",
-      "specs",
-      "src",
+      "jobs",
+      "tools",
+      "plugins",
+      "examples",
+      "configs",
+      "deployments",
+      "database",
+      "scripts",
+      "docs",
       "tests"
     ],
     "supportedDeploymentProfiles": [
-      "cloud"
+      "cloud",
+      "standalone"
     ],
     "defaultDeploymentProfile": "cloud",
     "family": "server",
@@ -57,10 +71,10 @@
   "media": {
     "icons": {
       "primary": {
-        "id": "sdkwork-prompts-pc-primary-icon",
+        "id": "sdkwork-prompts-primary-icon",
         "type": "ICON",
         "purpose": "PRIMARY",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts-pc/assets/icon-1024.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts/assets/icon-1024.png",
         "platform": "APP",
         "locale": "en-US",
         "width": 1024,
@@ -81,10 +95,10 @@
     },
     "screenshots": [
       {
-        "id": "sdkwork-prompts-pc-web-screenshot",
+        "id": "sdkwork-prompts-web-screenshot",
         "type": "SCREENSHOT",
         "purpose": "CATALOG_SCREENSHOT",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts-pc/media/web-screenshot.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts/media/web-screenshot.png",
         "platform": "WEB",
         "locale": "en-US",
         "deviceClass": "BROWSER",
@@ -94,21 +108,21 @@
         "format": "PNG",
         "fileSizeBytes": 1048576,
         "alphaChannel": false,
-        "caption": "SDKWork Prompts PC product screenshot.",
+        "caption": "SDKWork Prompts product screenshot.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Prompts PC app screenshot."
+          "altText": "SDKWork Prompts app screenshot."
         }
       }
     ],
     "previews": [
       {
-        "id": "sdkwork-prompts-pc-catalog-preview",
+        "id": "sdkwork-prompts-catalog-preview",
         "type": "PREVIEW_IMAGE",
         "purpose": "CATALOG_PREVIEW",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts-pc/media/preview-cover.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts/media/preview-cover.png",
         "platform": "WEB",
         "locale": "en-US",
         "width": 1600,
@@ -116,12 +130,12 @@
         "format": "PNG",
         "fileSizeBytes": 786432,
         "alphaChannel": false,
-        "caption": "SDKWork Prompts PC preview.",
+        "caption": "SDKWork Prompts preview.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Prompts PC preview cover."
+          "altText": "SDKWork Prompts preview cover."
         }
       }
     ],
@@ -131,6 +145,9 @@
     }
   },
   "publish": {
+    "channels": [
+      "dev"
+    ],
     "status": "ACTIVE",
     "platforms": [
       "WEB"
@@ -143,26 +160,44 @@
       "name": "sdkwork-skills-app"
     },
     "stores": [],
-    "storeUrl": "https://sdkwork.com/apps/sdkwork-prompts-pc"
+    "storeUrl": "https://sdkwork.com/apps/sdkwork-prompts"
   },
   "artifacts": {
     "installConfig": {
       "defaultPackageId": "linux-x64-cloud-server-tar-gz",
-      "installCommand": "sdkwork install sdkwork-prompts-pc",
-      "launchCommand": "sdkwork open sdkwork-prompts-pc",
-      "uninstallCommand": "sdkwork uninstall sdkwork-prompts-pc",
+      "installCommand": "sdkwork install sdkwork-prompts",
+      "launchCommand": "sdkwork open sdkwork-prompts",
+      "uninstallCommand": "sdkwork uninstall sdkwork-prompts",
       "packages": [
         {
           "id": "linux-x64-cloud-server-tar-gz",
-          "name": "Sdkwork Prompts Pc cloud server archive",
+          "name": "Sdkwork Prompts cloud server archive",
           "sourceType": "BINARY_URL",
           "packageFormat": "TAR_GZ",
           "platform": "API",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts-pc/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts/STABLE/0.1.0/linux-x64-cloud-server-tar-gz-0.1.0.tar.gz",
           "architecture": "x64",
           "checksumAlgorithm": "SHA-256",
-          "checksum": "56c083bd682f1b4749b14224a502f75cac90feab4dad2294735066d2ac2344fc",
+          "checksum": "a65ed54ab2fdab8d43f8a73817aff928731dde72072457f1edf1965982af4580",
           "deploymentProfile": "cloud",
+          "runtimeTarget": "server",
+          "profileBinding": "fixed",
+          "enabled": true,
+          "metadata": {
+            "releaseBuildDeferred": false
+          }
+        },
+        {
+          "id": "linux-x64-standalone-server-tar-gz",
+          "name": "Sdkwork Prompts standalone server archive",
+          "sourceType": "BINARY_URL",
+          "packageFormat": "TAR_GZ",
+          "platform": "API",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-prompts/STABLE/0.1.0/linux-x64-standalone-server-tar-gz-0.1.0.tar.gz",
+          "architecture": "x64",
+          "checksumAlgorithm": "SHA-256",
+          "checksum": "d86556f81f4fa68cd01d2df30b97dc14d7c4bf29e454101eda01f5fb0b5b0c1c",
+          "deploymentProfile": "standalone",
           "runtimeTarget": "server",
           "profileBinding": "fixed",
           "enabled": true,
@@ -185,16 +220,17 @@
       {
         "version": "0.1.0",
         "releaseChannel": "STABLE",
-        "title": "SDKWork Prompts PC 0.1.0",
-        "summary": "SDKWork Prompts PC initialized standard release.",
-        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Prompts PC.",
+        "title": "SDKWork Prompts 0.1.0",
+        "summary": "SDKWork Prompts initialized standard release.",
+        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Prompts.",
         "highlights": [
           "SDKWork App Standard v3 configuration initialized",
           "platform_app projection metadata standardized",
           "Download package matrix normalized"
         ],
         "packageIds": [
-          "linux-x64-cloud-server-tar-gz"
+          "linux-x64-cloud-server-tar-gz",
+          "linux-x64-standalone-server-tar-gz"
         ],
         "publishedAt": "2026-05-07T00:00:00Z",
         "current": true,
@@ -205,13 +241,18 @@
     ]
   },
   "security": {
+    "secretsPolicy": "No credentials, tokens, or private keys are stored in this manifest.",
     "checksumRequired": false,
     "signatureRequired": false,
     "sbomRequired": false
   },
+  "devApp": {
+    "enabled": true,
+    "entrypoint": "crates/sdkwork-api-prompts-standalone-gateway"
+  },
   "metadata": {
     "standardVersion": "2026-06-12",
-    "architectureStandard": "APP_PC_ARCHITECTURE_SPEC.md",
+    "canonicalSpecs": "../sdkwork-specs/README.md",
     "deploymentConfig": "etc/sdkwork.deployment.config.json",
     "standardOwner": "sdkwork-platform"
   }
