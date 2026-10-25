@@ -88,3 +88,16 @@ sdks/**/package-lock.json
 # (`vite-env.d.ts`, `styles.d.ts`, module shims) and real mini-program source under `src/`.
 # The sibling rule is enforced against tracked files by
 # `sdkwork-specs/tools/check-repository-baseline-content.mjs` instead.
+
+# ---- auto-audited: local artifacts that must never be committed ----
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+tmp/
+temp/
+*.temp
+.cache/
+.turbo/
+.next/
