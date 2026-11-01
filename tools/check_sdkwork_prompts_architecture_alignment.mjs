@@ -108,8 +108,7 @@ for (const openapiPath of [
 }
 
 for (const docPath of [
-  "configs/local/.env.example",
-  "configs/test/.env.test",
+  "apps/sdkwork-prompts-pc/.env.example",
   "deployments/docker/README.md",
   "sdks/README.md",
   "crates/sdkwork-prompts-service-host/README.md",
