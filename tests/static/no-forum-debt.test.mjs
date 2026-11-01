@@ -42,7 +42,7 @@ const scanRoots = [
 const skipPaths = [
   "specs/prompts-ai-database.schema.yaml",
   "tests/static/no-forum-debt.test.mjs",
-  ".env.postgres.example",
+  "config/host/postgres.env.example",
   "docs/archive",
   "docs/changelogs",
   "docs/migrations",
